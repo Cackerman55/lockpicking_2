@@ -152,6 +152,9 @@
           <Image iconType="3" name="/org/me/myimageapp/difficulties/focused/very hard.png"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="veryHardBActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="impossibleB">
       <Properties>
@@ -159,12 +162,14 @@
           <Image iconType="3" name="/org/me/myimageapp/difficulties/basic/impossible.jpg"/>
         </Property>
         <Property name="alignmentY" type="float" value="0.0"/>
+        <Property name="enabled" type="boolean" value="false"/>
         <Property name="rolloverIcon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
           <Image iconType="3" name="/org/me/myimageapp/difficulties/focused/impossible.png"/>
         </Property>
       </Properties>
       <Events>
         <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="impossibleBMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="impossibleBActionPerformed"/>
       </Events>
     </Component>
     <Container class="javax.swing.JScrollPane" name="tablePane">
