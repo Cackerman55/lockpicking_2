@@ -1,14 +1,17 @@
+
+
+import lock_forms.*;
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 
-/**
- *
+/*
  * @author Colin
  */
 public class picker extends javax.swing.JFrame {
+    public static boolean impossibleKey = false;
 
     /**
      * Creates new form picker
@@ -71,13 +74,24 @@ public class picker extends javax.swing.JFrame {
         veryHardB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/difficulties/basic/very hard.jpg"))); // NOI18N
         veryHardB.setToolTipText("");
         veryHardB.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/difficulties/focused/very hard.png"))); // NOI18N
+        veryHardB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                veryHardBActionPerformed(evt);
+            }
+        });
 
         impossibleB.setIcon(new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/difficulties/basic/impossible.jpg"))); // NOI18N
         impossibleB.setAlignmentY(0.0F);
+        impossibleB.setEnabled(false);
         impossibleB.setRolloverIcon(new javax.swing.ImageIcon(getClass().getResource("/org/me/myimageapp/difficulties/focused/impossible.png"))); // NOI18N
         impossibleB.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 impossibleBMouseClicked(evt);
+            }
+        });
+        impossibleB.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                impossibleBActionPerformed(evt);
             }
         });
 
@@ -187,19 +201,37 @@ public class picker extends javax.swing.JFrame {
 
     private void hardBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_hardBActionPerformed
         // TODO add your handling code here:
+        new hard().setVisible(true);
     }//GEN-LAST:event_hardBActionPerformed
 
     private void practiceBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_practiceBActionPerformed
         // TODO add your handling code here:
+        new practice().setVisible(true);
     }//GEN-LAST:event_practiceBActionPerformed
 
     private void mediumBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_mediumBActionPerformed
         // TODO add your handling code here:
+        new medium().setVisible(true);
     }//GEN-LAST:event_mediumBActionPerformed
 
     private void impossibleBMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_impossibleBMouseClicked
-        // TODO add your handling code here:
+        if(impossibleKey){
+            impossibleB.setEnabled(true);
+        }
+        else if (!impossibleKey){
+            impossibleB.setEnabled(false);
+        }
     }//GEN-LAST:event_impossibleBMouseClicked
+
+    private void impossibleBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_impossibleBActionPerformed
+        // TODO add your handling code here:
+        new impossible().setVisible(true);
+    }//GEN-LAST:event_impossibleBActionPerformed
+
+    private void veryHardBActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_veryHardBActionPerformed
+        // TODO add your handling code here:
+        new very_hard().setVisible(true);
+    }//GEN-LAST:event_veryHardBActionPerformed
 
     /**
      * @param args the command line arguments
