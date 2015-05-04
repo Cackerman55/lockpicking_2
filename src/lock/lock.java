@@ -1,3 +1,5 @@
+package lock;
+
 
 
 /**
@@ -27,7 +29,7 @@ public class lock {
                 if(rank==1){pos=9;}
 		else if(rank==2){pos=17;}
 		else if(rank==3){pos=27;}
-		else if(rank==4){pos=39;}
+		else if(rank==4){pos=69;}
 		else if(rank==5){pos=179;}
 		rust =(int)(Math.random()*5);
                 time = 0;
