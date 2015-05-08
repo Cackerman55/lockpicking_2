@@ -10,7 +10,7 @@ public class lock {
 	
 	private int key;
 	private int rank;
-	private int pos;
+	private int num;
 	private int rust;
         public double time;
 	
@@ -26,11 +26,11 @@ public class lock {
 	public lock(int k, int r){
 		key =k;
 		rank =r;
-                if(rank==1){pos=9;}
-		else if(rank==2){pos=17;}
-		else if(rank==3){pos=27;}
-		else if(rank==4){pos=69;}
-		else if(rank==5){pos=179;}
+                if(rank==1){num=9;}
+		else if(rank==2){num=17;}
+		else if(rank==3){num=27;}
+		else if(rank==4){num=69;}
+		else if(rank==5){num=179;}
 		rust =(int)(Math.random()*5);
                 time = 0;
 	}
@@ -44,12 +44,14 @@ public class lock {
 	 */
 	public lock(int r){
 		rank =r;
-		if(rank==1){pos=9;}
-		else if(rank==2){pos=17;}
-		else if(rank==3){pos=27;}
-		else if(rank==4){pos=39;}
-		else if(rank==5){pos=179;}
-		key =(int)(Math.random()*pos);
+		if(rank==1){num=9;}
+		else if(rank==2){num=17;}
+		else if(rank==3){num=27;}
+		else if(rank==4){num=69;}
+		else if (rank ==5){
+                    num=179;
+                }
+		key =(int)(Math.random()*num);
 		rust =(int)(Math.random()*5);
                 time = 0;
 	}
@@ -70,8 +72,8 @@ public class lock {
             return rank;
         }
         
-        public int getPos(){
-            return pos;
+        public int getNum(){
+            return num;
         }
 
 }
